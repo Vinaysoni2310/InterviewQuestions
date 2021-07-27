@@ -1,0 +1,243 @@
+Python Interview Questions & Answers.
+
+
+Q1. What are lists and tuples? What is the key difference between the two?
+
+Ans.
+Lists and Tuples are both sequence data types that can store a collection of objects in Python.
+The objects stored in both sequences can have different data types. Lists are represented with square brackets ['sara', 6, 0.19], while tuples are represented with parantheses ('ansh', 5, 0.97).
+But what is the real difference between the two? The key difference between the two is that while lists are mutable, tuples on the other hand are immutable objects. This means that lists can be modified, appended or sliced on-the-go but tuples remain constant and cannot be modified in any manner. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.2 What are generators in Python?
+Ans.
+Generators are functions that return an iterable collection of items, one at a time, in a set manner. Generators, in general, are used to create iterators with a different approach. They employ the use of yield keyword rather than return to return a generator object.
+Let's try and build a generator for fibonacci numbers -
+
+## generate fibonacci numbers upto n
+def fib(n):
+    p, q = 0, 1
+    while(p < n):
+        yield p
+        p, q = q, p + q
+
+x = fib(10)    # create generator object 
+  
+## iterating using __next__(), for Python2, use next()
+x.__next__()    # output => 0
+x.__next__()    # output => 1
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.3 Is Python case-sensitive?
+
+A language is case-sensitive if it distinguishes between identifiers like myname and Myname. In other words, it cares about case- lowercase or uppercase. 
+Python is indeed case-sensitive.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.4 How would you convert a string into lowercase?
+
+Ans.
+We use the lower() method for this.
+
+>>> 'AyuShi'.lower()
+‘ayushi’
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.5 How do you get a list of all the keys in a dictionary?
+
+Ans.
+For this, we use the function keys().
+
+>>> mydict={'a':1,'b':2,'c':3,'e':5}
+>>> mydict.keys()
+dict_keys([‘a’, ‘b’, ‘c’, ‘e’])
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.6 What is slicing?
+
+Slicing is a technique that allows us to retrieve only a part of a list, tuple, or string. For this, we use the slicing operator [].
+
+>>> (1,2,3,4,5)[2:4]
+(3, 4)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.7 How would you declare a comment in Python?
+
+Unlike languages like C++, Python does not have multiline comments. All it has is octothorpe (#). Anything following a hash is considered a comment, and the interpreter ignores it.
+
+>>> #line 1 of comment
+>>> #line 2 of comment
+In fact, you can place a comment anywhere in your code. You can use it to explain your code.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.8 How will you check if all characters in a string are alphanumeric?
+
+Ans.
+For this, we use the method isalnum().
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.9. How will you capitalize the first letter of a string?
+
+Ans.
+Simply using the method capitalize().
+
+>>> 'ayushi'.capitalize()
+‘Ayushi’
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.10 We know Python is all the rage these days. But to be truly accepting of a great technology, you must know its pitfalls as well. Would you like to talk about this?
+
+Ans.
+Of course. To be truly yourself, you must be accepting of your flaws. Only then can you move forward to work on them. Python has its flaws too:
+
+Python Interview Question - limitations of Python
+
+Python’s interpreted nature imposes a speed penalty on it.
+While Python is great for a lot of things, it is weak in mobile computing, and in browsers.
+Being dynamically-typed, Python uses duck-typing (If it looks like a duck, it must be a duck). This can raise runtime errors.
+Python has underdeveloped database access layers. This renders it a less-than-perfect choice for huge database applications.
+And then, well, of course. Being easy makes it addictive. Once a Python-coder, always a Python coder.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.11 With Python, how do you find out which directory you are currently in?
+
+Ans.
+To find this, we use the function/method getcwd(). We import it from the module os.
+
+>>> import os
+>>> os.getcwd()
+‘C:\\Users\\lifei\\AppData\\Local\\Programs\\Python\\Python36-32’
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.12 How do you insert an object at a given index in Python?
+
+Ams.
+Let’s build a list first.
+
+>>> a=[1,2,4]
+Now, we use the method insert. The first argument is the index at which to insert, the second is the value to insert.
+
+>>> a.insert(2,3)
+>>> a
+[1, 2, 3, 4]
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.13 And how do you reverse a list?
+
+Ans.
+Using the reverse() method.
+
+>>> a.reverse()
+>>> a
+[4, 3, 2, 1]
+
+You can also do it via slicing from right to left:
+
+>>> a[::-1]
+>>> a
+[1, 2, 3, 4]
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.14 How does a function return values?
+
+Ans.
+A function uses the ‘return’ keyword to return a value. Take a look:
+
+>>> def add(a,b):
+return a+b
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.15 How would you define a block in Python?
+
+Ans.
+For any kind of statements, we possibly need to define a block of code under them. However, Python does not support curly braces. This means we must end such statements with colons and then indent the blocks under those with the same amount.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.16 Why do we need break and continue in Python?
+
+Ans.
+Both break and continue are statements that control flow in Python loops. break stops the current loop from executing further and transfers the control to the next block. continue jumps to the next iteration of the loop without exhausting it.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.17 What is Python good for?
+
+Ans.
+Python is a jack of many trades, check out Applications of Python to find out more.
+
+Meanwhile, we’ll say we can use it for:
+
+Web and Internet Development
+Desktop GUI
+Scientific and Numeric Applications
+Software Development Applications
+Applications in Education
+Applications in Business
+Database Access
+Network Programming
+Games, 3D Graphics
+Other Python Applications
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.18 How will you convert a list into a string?
+
+Ans.
+We will use the join() method for this.
+
+>>> nums=['one','two','three','four','five','six','seven']
+>>> s=' '.join(nums)
+>>> s
+‘one two three four five six seven’
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.19. How will you remove a duplicate element from a list?
+
+Ans.
+We can turn it into a set to do that.
+
+>>> list=[1,2,1,3,4,2]
+>>> set(list)
+{1, 2, 3, 4}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.20 Explain identity operators in Python.
+
+Ans.
+The operators ‘is’ and ‘is not’ tell us if two values have the same identity.
+
+>>> 10 is '10'
+False
+
+>>> True is not False
+True
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.21 What is a docstring?
+
+Ans.
+A docstring is a documentation string that we use to explain what a construct does. We place it as the first thing under a function, class, or a method, to describe what it does. We declare a docstring using three sets of single or double-quotes.
+
+
+
+
+
+
